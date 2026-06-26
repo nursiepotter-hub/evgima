@@ -126,4 +126,13 @@ export const products: Product[] = [
     image: "https://www.cdiscount.com/pdt2/7/0/5/1/700x700/aaans27705/rw/coffret-cadeau-bien-etre.jpg",
     inStock: false,
   },
+  {
+    id: 14,
+    name: "The Ritual of Yozakura - Coffret Bain & Corps M",
+    price: 0,
+    description: "Coffret cadeau Ritual of Yozakura — bain et corps. Un rituel floral inspiré de la fleur de cerisier japonaise pour un moment de pure détente.",
+    category: "Coffrets",
+    image: "https://media.sephora.eu/content/dam/gdam/europe/digital/pim/published/R/RITUALS/777316/377636-media_swatch.jpeg?scaleWidth=750&scaleHeight=750&scaleMode=fit",
+    inStock: false,
+  },
 ];
