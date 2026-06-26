@@ -33,7 +33,7 @@ export const products: Product[] = [
     price: 12000,
     description: "Huile lavante dermatologique Uriage — pour les peaux sèches et réactives.",
     category: "Soins Corps",
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZOBEmdyPgoDTNiJklGP-nC8jWZInKs_rO6qyEVpWesw&s",
     inStock: true,
   },
   {
