@@ -78,7 +78,7 @@ export const products: Product[] = [
     price: 7000,
     description: "Eau thermale Avène 300ml — apaise, adoucit et calme les peaux sensibles.",
     category: "Eaux Thermales",
-    image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400",
+    image: "https://www.my-origines.com/dw/image/v2/BJRD_PRD/on/demandware.static/-/Sites-size-master/default/dw81529a55/images/P0461005_P.jpg?sw=900&sh=900&sm=fit",
     inStock: true,
   },
   {
