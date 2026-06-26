@@ -42,7 +42,7 @@ export const products: Product[] = [
     price: 12000,
     description: "Gel surgrais dermatologique Uriage — lave sans dessécher, apaise les irritations.",
     category: "Soins Corps",
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400",
+    image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRAv1OCdDt4_i2V9IWyL8D3_RViSPGUhS8Hxdc5_52oVFTJb-M5J-enKHkhxuV3BndUA6EQNHfHproPK6cEvNTD7AqymAZlhuAQQsE443I&usqp=CAc",
     inStock: true,
   },
   {
