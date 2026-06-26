@@ -15,7 +15,7 @@ export const products: Product[] = [
     price: 0,
     description: "Coffret cadeau Rituals — l'art du bien-être et de la détente.",
     category: "Coffrets",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=400",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPrd-nau1Ih1zmRwtNLMz22G-bSbLQ5-rWMEbSrQkFow&s=10",
     inStock: true,
   },
   {
