@@ -135,4 +135,13 @@ export const products: Product[] = [
     image: "https://media.sephora.eu/content/dam/gdam/europe/digital/pim/published/R/RITUALS/777316/377636-media_swatch.jpeg?scaleWidth=750&scaleHeight=750&scaleMode=fit",
     inStock: false,
   },
+  {
+    id: 15,
+    name: "The Ritual of Karma - Coffret Bain & Corps M",
+    price: 0,
+    description: "Coffret cadeau Ritual of Karma — bain et corps. Un rituel inspiré du bien-être holistique pour harmoniser corps et esprit.",
+    category: "Coffrets",
+    image: "https://media.sephora.eu/content/dam/gdam/europe/digital/pim/published/R/RITUALS/777310/377632-media_swatch.jpeg?scaleWidth=750&scaleHeight=750&scaleMode=fit",
+    inStock: false,
+  },
 ];
