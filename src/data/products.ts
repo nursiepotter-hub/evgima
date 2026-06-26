@@ -114,7 +114,7 @@ export const products: Product[] = [
     price: 3000,
     description: "Gants de bain gommant — exfolie et lisse la peau pour un effet bonne mine.",
     category: "Accessoires",
-    image: "https://images.unsplash.com/photo-1631723827287-5271477b93e4?w=400",
+    image: "https://www.boticinal.com/media/catalog/product/p/o/powersante-estipharm-gant-exfoliant-paire-1-unite.png?quality=80&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg",
     inStock: true,
   },
 ];
