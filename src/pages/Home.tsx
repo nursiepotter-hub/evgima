@@ -70,8 +70,8 @@ export default function Home() {
             <div className="relative animate-fade-in">
               <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600"
-                  alt="Cosmétiques de luxe"
+                  src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=600"
+                  alt="Cosmétiques français"
                   className="w-full h-full object-cover"
                 />
               </div>
