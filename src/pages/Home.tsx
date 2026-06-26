@@ -70,8 +70,8 @@ export default function Home() {
             <div className="relative animate-fade-in">
               <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600"
-                  alt="Parfums, maquillage et cosmétiques"
+                  src="/hero.png"
+                  alt="EVGIMA — Cosmétiques français"
                   className="w-full h-full object-cover"
                 />
               </div>
