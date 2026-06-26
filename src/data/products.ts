@@ -60,7 +60,7 @@ export const products: Product[] = [
     price: 10000,
     description: "Gel lavant surgras SVR — nettoie en douceur les peaux atopiques et sensibles.",
     category: "Gels Douche",
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400",
+    image: "https://mapharma.fr/wp-content/uploads/2021/09/SVR-gel-lavant-topialyse-1L.webp",
     inStock: true,
   },
   {
