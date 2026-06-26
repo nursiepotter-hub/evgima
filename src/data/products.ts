@@ -144,4 +144,13 @@ export const products: Product[] = [
     image: "https://media.sephora.eu/content/dam/gdam/europe/digital/pim/published/R/RITUALS/777310/377632-media_swatch.jpeg?scaleWidth=750&scaleHeight=750&scaleMode=fit",
     inStock: false,
   },
+  {
+    id: 16,
+    name: "Rituals Homme - Coffret Bain & Corps M",
+    price: 0,
+    description: "Coffret cadeau Rituals Homme — bain et corps. Une sélection de soins masculins pour un rituel de bien-être viril et sophistiqué.",
+    category: "Coffrets",
+    image: "https://media.sephora.eu/content/dam/gdam/europe/digital/pim/published/R/RITUALS/777313/377634-media_swatch.jpeg?scaleWidth=750&scaleHeight=750&scaleMode=fit",
+    inStock: false,
+  },
 ];
