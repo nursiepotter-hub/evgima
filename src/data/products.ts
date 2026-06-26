@@ -24,7 +24,7 @@ export const products: Product[] = [
     price: 7000,
     description: "Gel douche surgraissant A-Derma — nettoie en douceur les peaux sensibles.",
     category: "Gels Douche",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400",
+    image: "https://media.e.leclerc/3282770396522_1?fit=fit&op_sharpen=1&resmode=bilin&fmt=pjpeg&qlt=85&trim=0.5&wid=450&hei=450",
     inStock: true,
   },
   {
@@ -42,7 +42,7 @@ export const products: Product[] = [
     price: 12000,
     description: "Gel surgrais dermatologique Uriage — lave sans dessécher, apaise les irritations.",
     category: "Soins Corps",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400",
+    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400",
     inStock: true,
   },
   {
@@ -51,7 +51,7 @@ export const products: Product[] = [
     price: 10000,
     description: "Gel douche ultra-hydratant Topicrem — préserve l'hydratation naturelle de la peau.",
     category: "Gels Douche",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400",
+    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400",
     inStock: true,
   },
   {
@@ -60,7 +60,7 @@ export const products: Product[] = [
     price: 10000,
     description: "Gel lavant surgras SVR — nettoie en douceur les peaux atopiques et sensibles.",
     category: "Gels Douche",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400",
+    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400",
     inStock: true,
   },
   {
