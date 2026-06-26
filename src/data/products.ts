@@ -69,7 +69,7 @@ export const products: Product[] = [
     price: 12000,
     description: "Huile de douche ultra-hydratante Topicrem — nourrit et protège la peau.",
     category: "Soins Corps",
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400",
+    image: "https://m.media-amazon.com/images/I/61daTKrs1TL._AC_UF894,1000_QL80_.jpg",
     inStock: true,
   },
   {
