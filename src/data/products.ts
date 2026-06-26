@@ -87,7 +87,7 @@ export const products: Product[] = [
     price: 5000,
     description: "Eau thermale Boticinal 300ml — spray hydratant pour tous types de peaux.",
     category: "Eaux Thermales",
-    image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400",
+    image: "https://www.boticinal.com/media/catalog/product/b/o/boticinal-laboratoire-eau-thermale-des-pyrenees-brume.jpg?quality=80&fit=bounds&height=&width=&canvas=:",
     inStock: true,
   },
   {
