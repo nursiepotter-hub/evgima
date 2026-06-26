@@ -117,4 +117,13 @@ export const products: Product[] = [
     image: "https://www.boticinal.com/media/catalog/product/p/o/powersante-estipharm-gant-exfoliant-paire-1-unite.png?quality=80&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg",
     inStock: true,
   },
+  {
+    id: 13,
+    name: "Coffret Bien-Être Ayurvédique Rituals",
+    price: 0,
+    description: "Coffret cadeau bien-être Rituals — ensemble d'essai ayurvédique 245 ml. Découvrez les rituels de bien-être inspirés de l'Ayurveda.",
+    category: "Coffrets",
+    image: "https://www.cdiscount.com/pdt2/7/0/5/1/700x700/aaans27705/rw/coffret-cadeau-bien-etre.jpg",
+    inStock: false,
+  },
 ];
