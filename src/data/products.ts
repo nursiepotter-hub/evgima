@@ -51,7 +51,7 @@ export const products: Product[] = [
     price: 10000,
     description: "Gel douche ultra-hydratant Topicrem — préserve l'hydratation naturelle de la peau.",
     category: "Gels Douche",
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400",
+    image: "https://media.e.leclerc/3700281704389_1?fit=fit&op_sharpen=1&resmode=bilin&fmt=pjpeg&qlt=85&trim=0.5&wid=450&hei=450",
     inStock: true,
   },
   {
