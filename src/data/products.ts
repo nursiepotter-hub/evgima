@@ -11,11 +11,11 @@ export interface Product {
 export const products: Product[] = [
   {
     id: 1,
-    name: "Coffrets Rituals",
+    name: "Coffret Cadeau Rituals Sakura M",
     price: 0,
-    description: "Coffret cadeau Rituals — l'art du bien-être et de la détente. Prix à venir.",
+    description: "Coffret cadeau Rituals Sakura — produits corps et maison. Un rituel de bien-être complet aux senteurs délicates de cerisier.",
     category: "Coffrets",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvEn6mFk6SiK1nCeqYC2IhgsiNSJ0eUHIGyivDZ7G4EA&s=10",
+    image: "https://rituals.scene7.com/is/image/rituals/1120203-rituals-sakura-gift-set-m-packclosed?resMode=sharp2&fmt=webp-alpha&crop=1250,750,4500,4500&wid=1050",
     inStock: false,
   },
   {

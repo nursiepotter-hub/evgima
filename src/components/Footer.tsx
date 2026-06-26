@@ -71,7 +71,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-white/50 text-sm">
                 <Phone className="w-4 h-4 text-gold shrink-0" />
-                <span>WhatsApp : +221 XX XXX XX XX</span>
+                <span>WhatsApp : +221 77 385 09 13</span>
               </li>
               <li>
                 <a href="mailto:contact@evgima.sn" className="flex items-center gap-3 text-white/50 hover:text-gold transition-colors text-sm">
