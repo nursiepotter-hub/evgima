@@ -96,7 +96,7 @@ export const products: Product[] = [
     price: 9000,
     description: "Lait corporel ultra-hydratant Topicrem — nourrit intensément les peaux sèches.",
     category: "Soins Corps",
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400",
+    image: "https://fr.topicrem.com/cdn/shop/files/PRODUIT-UH-LAITCORPS500ML-Visuel3_ae9dbe64-ca13-46f1-97de-ac49fe1ad45b.jpg?v=1759316789&width=1445",
     inStock: true,
   },
   {
