@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Search, ShoppingBag, ArrowRight, Star } from 'lucide-react'
-import { products } from '@/data/products'
+import { Search, ShoppingBag, X, Check } from 'lucide-react'
+import { products, type Product } from '@/data/products'
 import { useCart } from '@/context/CartContext'
 
 const categories = ['Tous', 'Gels Douche', 'Soins Corps', 'Eaux Thermales', 'Soins Visage', 'Accessoires', 'Coffrets']
@@ -9,6 +8,7 @@ const categories = ['Tous', 'Gels Douche', 'Soins Corps', 'Eaux Thermales', 'Soi
 export default function Products() {
   const [active, setActive] = useState('Tous')
   const [search, setSearch] = useState('')
+  const [selected, setSelected] = useState<Product | null>(null)
   const { addItem } = useCart()
 
   const filtered = products.filter(p => {
@@ -66,18 +66,91 @@ export default function Products() {
         ) : (
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {filtered.map((p) => (
-              <ProductCard key={p.id} product={p} onAdd={() => addItem(p)} />
+              <ProductCard key={p.id} product={p} onClick={() => setSelected(p)} onAdd={() => addItem(p)} />
             ))}
           </div>
         )}
       </div>
+
+      {/* Modal */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal/60 backdrop-blur-sm"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="bg-ivory rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 flex items-center justify-center hover:bg-white transition-colors z-10"
+            >
+              <X className="w-5 h-5 text-charcoal/60" />
+            </button>
+            <div className="grid md:grid-cols-2">
+              <div className="aspect-square bg-rose/20 flex items-center justify-center p-8">
+                <img
+                  src={selected.image}
+                  alt={selected.name}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="p-6 md:p-8 flex flex-col justify-between">
+                <div>
+                  <span className="text-xs text-gold font-semibold uppercase tracking-widest">
+                    {selected.category}
+                  </span>
+                  <h2 className="font-display text-2xl text-charcoal mt-2 mb-3 leading-snug">
+                    {selected.name}
+                  </h2>
+                  <p className="text-sage text-sm leading-relaxed mb-6">
+                    {selected.description}
+                  </p>
+                  <div className="space-y-2 mb-6">
+                    <div className="flex items-center gap-2 text-xs text-sage">
+                      <Check className="w-3.5 h-3.5 text-gold" />
+                      Produit 100% authentique, importé de France
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-sage">
+                      <Check className="w-3.5 h-3.5 text-gold" />
+                      Livraison Dakar & régions du Sénégal
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between border-t border-ivory pt-5">
+                  {selected.price > 0 ? (
+                    <>
+                      <span className="font-display text-2xl font-bold text-burgundy">
+                        {selected.price.toLocaleString()} <span className="text-sm font-normal text-sage">FCFA</span>
+                      </span>
+                      <button
+                        onClick={() => { addItem(selected); setSelected(null) }}
+                        className="bg-burgundy hover:bg-burgundy-light text-white px-6 py-3 rounded-full text-sm font-medium transition-all shadow-lg shadow-burgundy/20 flex items-center gap-2"
+                      >
+                        <ShoppingBag className="w-4 h-4" />
+                        Ajouter
+                      </button>
+                    </>
+                  ) : (
+                    <span className="text-sage italic text-sm">Prix à venir</span>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
 
-function ProductCard({ product, onAdd }: { product: typeof products[0]; onAdd: () => void }) {
+function ProductCard({ product, onClick, onAdd }: { product: Product; onClick: () => void; onAdd: () => void }) {
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+    <div
+      className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 cursor-pointer"
+      onClick={onClick}
+    >
       <div className="relative aspect-square overflow-hidden bg-rose/20">
         <img
           src={product.image}
@@ -86,7 +159,7 @@ function ProductCard({ product, onAdd }: { product: typeof products[0]; onAdd: (
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
         <button
-          onClick={onAdd}
+          onClick={(e) => { e.stopPropagation(); onAdd() }}
           disabled={product.price === 0}
           className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-full text-sm font-medium text-charcoal opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all shadow-lg hover:bg-burgundy hover:text-white flex items-center gap-2"
         >

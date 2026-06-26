@@ -1,41 +1,50 @@
-import { Mail, MapPin, Phone, Heart } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const currentYear = new Date().getFullYear()
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-charcoal text-white">
+    <footer id="contact" className="bg-burgundy-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="lg:col-span-2">
+          <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-burgundy flex items-center justify-center">
-                <span className="font-display font-bold text-xl">E</span>
+              <div className="w-12 h-12 rounded-xl bg-gold flex items-center justify-center">
+                <span className="font-display font-bold text-xl text-burgundy-dark">E</span>
               </div>
               <div>
-                <span className="font-display text-xl font-bold tracking-wide">EVGIMA</span>
-                <span className="block text-[10px] tracking-[0.2em] text-white/40 uppercase">Cosmétiques</span>
+                <span className="font-display text-xl font-bold tracking-wide text-white">EVGIMA</span>
+                <span className="block text-[10px] tracking-[0.2em] text-white/40 uppercase">Cosmétiques Français</span>
               </div>
             </div>
-            <p className="text-white/60 leading-relaxed max-w-md mb-8">
-              EVGIMA vous apporte le meilleur de la cosmétique française,
-              sélectionné avec amour par nos sœurs en France et livré
-              partout au Sénégal.
+            <p className="text-white/50 leading-relaxed mb-6 text-sm italic">
+              « L'élégance française, pour vous. »
             </p>
-            <div className="flex items-center gap-2 text-white/40 text-sm">
-              <Heart className="w-4 h-4 text-gold" />
-              <span>Trois sœurs, un rêve commun</span>
+            <div className="space-y-3">
+              {[
+                { initial: 'E', name: 'Eva & Gigi', loc: 'Paris, France', role: 'Sélection & approvisionnement' },
+                { initial: 'M', name: 'Martine', loc: 'Dakar, Sénégal', role: 'Réception & livraison' },
+              ].map((s, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
+                  <div className="text-sm text-white/60 leading-snug">
+                    <strong className="text-white font-medium">{s.name}</strong> — {s.loc}<br />
+                    {s.role}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           <div>
-            <h4 className="font-display text-lg mb-6">Liens</h4>
+            <h4 className="font-display text-white text-lg mb-6">Boutique</h4>
             <ul className="space-y-3">
               {[
-                { to: '/', label: 'Accueil' },
-                { to: '/produits', label: 'Produits' },
-                { to: '/#histoire', label: 'Notre histoire' },
+                { to: '/produits', label: 'Tous les produits' },
+                { to: '/', label: 'Soin du corps' },
+                { to: '/', label: 'Soin du visage' },
+                { to: '/', label: 'Coffrets cadeaux' },
               ].map((l) => (
                 <li key={l.label}>
                   <Link to={l.to} className="text-white/50 hover:text-gold transition-colors text-sm">
@@ -47,23 +56,32 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display text-lg mb-6">Contact</h4>
+            <h4 className="font-display text-white text-lg mb-6">Informations</h4>
+            <ul className="space-y-3">
+              {['Livraison & délais', 'Politique de retour', 'Authenticité', 'Mentions légales'].map((l) => (
+                <li key={l} className="text-white/50 text-sm cursor-pointer hover:text-gold transition-colors">
+                  {l}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-white text-lg mb-6">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-white/50 text-sm">
-                <MapPin className="w-4 h-4 text-gold shrink-0" />
-                <span>Sénégal — France</span>
+                <Phone className="w-4 h-4 text-gold shrink-0" />
+                <span>WhatsApp : +221 XX XXX XX XX</span>
               </li>
               <li>
-                <a href="tel:+221XXXXXXXXX" className="flex items-center gap-3 text-white/50 hover:text-gold transition-colors text-sm">
-                  <Phone className="w-4 h-4 text-gold shrink-0" />
-                  <span>Sénégal : +221 XX XXX XX XX</span>
-                </a>
-              </li>
-              <li>
-                <a href="mailto:contact@evgima.com" className="flex items-center gap-3 text-white/50 hover:text-gold transition-colors text-sm">
+                <a href="mailto:contact@evgima.sn" className="flex items-center gap-3 text-white/50 hover:text-gold transition-colors text-sm">
                   <Mail className="w-4 h-4 text-gold shrink-0" />
-                  <span>contact@evgima.com</span>
+                  <span>contact@evgima.sn</span>
                 </a>
+              </li>
+              <li className="flex items-center gap-3 text-white/50 text-sm">
+                <MapPin className="w-4 h-4 text-gold shrink-0" />
+                <span>Dakar, Sénégal</span>
               </li>
             </ul>
           </div>
@@ -74,7 +92,11 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-white/30">
             <span>© {currentYear} EVGIMA. Tous droits réservés.</span>
-            <span>Cosmétiques français — Livrés au Sénégal avec ❤️</span>
+            <span className="flex items-center gap-2">
+              <span>🇫🇷 Produits français</span>
+              <span>·</span>
+              <span>🇸🇳 Livraison Sénégal</span>
+            </span>
           </div>
         </div>
       </div>

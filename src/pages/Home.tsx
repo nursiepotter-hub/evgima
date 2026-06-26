@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Star, Truck, Shield, Heart, RefreshCw } from 'lucide-react'
+import { ArrowRight, Star, Truck, Shield, Heart, RefreshCw, Smartphone, MessageCircle } from 'lucide-react'
 import { products } from '@/data/products'
 
 const featured = products.filter(p => p.price > 0).slice(0, 4)
@@ -91,52 +91,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== BANDE DORÉE ===== */}
+      <div className="bg-gold py-4 px-6 flex items-center justify-center gap-6 sm:gap-12 overflow-hidden flex-wrap">
+        {['🇫🇷 Sélection France', '✦', '🚚 Livraison Sénégal', '✦', '🔒 Paiement sécurisé', '✦', '⭐ 100% authentique'].map((item, i) => (
+          <span key={i} className="text-burgundy-dark font-semibold text-xs tracking-widest uppercase whitespace-nowrap">
+            {item}
+          </span>
+        ))}
+      </div>
+
       {/* ===== NOTRE HISTOIRE ===== */}
       <section id="histoire" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-gold font-medium tracking-widest text-sm uppercase">Notre histoire</span>
-            <h2 className="font-display text-4xl lg:text-5xl text-charcoal mt-4 mb-6">
-              Trois sœurs,{' '}
-              <span className="text-burgundy">un rêve commun</span>
-            </h2>
-            <p className="text-sage leading-relaxed">
-              EVGIMA est née de l'amour de trois sœurs pour la beauté et le bien-être.
-              Deux en France, une au Sénégal — ensemble, nous faisons voyager
-              l'excellence cosmétique française jusqu'à vous.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-3xl bg-ivory/80 hover:bg-rose/30 transition-colors">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-burgundy/10 flex items-center justify-center">
-                <span className="font-display text-3xl text-burgundy">1</span>
-              </div>
-              <h3 className="font-display text-xl text-charcoal mb-3">Sélection en France</h3>
-              <p className="text-sage text-sm leading-relaxed">
-                Nos deux sœurs basées en France sélectionnent avec soin chaque produit
-                auprès des meilleures marques françaises.
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-gold font-medium tracking-widest text-sm uppercase">Notre histoire</span>
+              <h2 className="font-display text-4xl lg:text-5xl text-charcoal mt-4 mb-6">
+                Trois sœurs,{' '}
+                <span className="text-burgundy">une passion</span>
+              </h2>
+              <p className="text-sage leading-relaxed mb-4">
+                EVGIMA est née d'un constat simple : les cosmétiques français de qualité
+                sont difficiles à trouver au Sénégal — ou vendus à des prix prohibitifs.
+                Trois sœurs ont décidé de changer cela.
+              </p>
+              <p className="text-sage leading-relaxed mb-4">
+                Basées entre Paris et Dakar, elles ont construit un pont entre deux mondes :
+                la rigueur et l'excellence de la cosmétique française d'un côté,
+                la chaleur et le dynamisme sénégalais de l'autre.
+              </p>
+              <p className="text-sage leading-relaxed">
+                Chaque produit est sélectionné avec soin, vérifié, et acheminé directement
+                depuis la France — <strong>sans intermédiaires</strong>.
               </p>
             </div>
-            <div className="text-center p-8 rounded-3xl bg-ivory/80 hover:bg-rose/30 transition-colors">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center">
-                <span className="font-display text-3xl text-gold">2</span>
-              </div>
-              <h3 className="font-display text-xl text-charcoal mb-3">Acheminement</h3>
-              <p className="text-sage text-sm leading-relaxed">
-                Chaque produit voyage de France jusqu'au Sénégal, dans le respect
-                des normes de conservation et de qualité.
-              </p>
-            </div>
-            <div className="text-center p-8 rounded-3xl bg-ivory/80 hover:bg-rose/30 transition-colors">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-burgundy/10 flex items-center justify-center">
-                <span className="font-display text-3xl text-burgundy">3</span>
-              </div>
-              <h3 className="font-display text-xl text-charcoal mb-3">Livraison au Sénégal</h3>
-              <p className="text-sage text-sm leading-relaxed">
-                Notre sœur au Sénégal gère la réception et vous livre partout
-                dans le pays, rapidement et en toute confiance.
-              </p>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                { initial: 'E', name: 'Eva', role: 'Paris · Sélection', desc: 'Passionnée de dermatologie, elle choisit chaque produit avec une exigence médicale.' },
+                { initial: 'G', name: 'Gigi', role: 'Paris · Achats', desc: 'Coordinatrice des approvisionnements, elle négocie directement avec les fournisseurs.' },
+                { initial: 'M', name: 'Martine', role: 'Dakar · Livraison', desc: 'Au Sénégal, elle reçoit, contrôle et livre chaque commande avec le sourire.' },
+              ].map((s, i) => (
+                <div key={i} className="bg-ivory/80 border border-ivory rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-burgundy to-burgundy-light flex items-center justify-center">
+                    <span className="font-display text-xl font-bold text-white">{s.initial}</span>
+                  </div>
+                  <h3 className="font-display text-lg text-charcoal mb-1">{s.name}</h3>
+                  <p className="text-xs text-gold font-semibold tracking-wider uppercase mb-3">{s.role}</p>
+                  <p className="text-sm text-sage leading-relaxed">{s.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -202,21 +205,31 @@ export default function Home() {
       </section>
 
       {/* ===== AVANTAGES ===== */}
-      <section className="py-16 bg-burgundy">
+      <section className="py-20 bg-gradient-to-br from-burgundy to-burgundy-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="text-center mb-14">
+            <span className="text-gold font-medium tracking-widest text-sm uppercase">Pourquoi EVGIMA</span>
+            <h2 className="font-display text-3xl lg:text-4xl text-white mt-4">
+              Nos <span className="text-gold">engagements</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Truck, title: 'Livraison Sénégal', desc: 'Partout au Sénégal' },
-              { icon: Shield, title: '100% Authentique', desc: 'Directement de France' },
-              { icon: RefreshCw, title: 'Satisfait ou remboursé', desc: 'Sous 7 jours' },
-              { icon: Heart, title: 'Service client', desc: 'Disponible 7j/7' },
+              { icon: Truck, title: 'Livraison Sénégal', desc: 'Dakar, Thiès, Saint-Louis et toutes les régions. Votre commande arrive chez vous, emballée avec soin.' },
+              { icon: Shield, title: '100% Authentique', desc: 'Tous nos produits viennent de pharmacies et revendeurs agréés en France. Zéro contrefaçon.' },
+              { icon: RefreshCw, title: 'Satisfait ou Remboursé', desc: 'Un problème ? Nous vous remboursons sans condition. Votre confiance est notre priorité.' },
+              { icon: Smartphone, title: 'Paiement Mobile Money', desc: 'Orange Money, Wave, FreeMoney. Payez avec votre téléphone, sans carte bancaire.' },
+              { icon: Heart, title: 'Sélection Experte', desc: 'Chaque produit est testé par nos sœurs — des femmes qui utilisent ce qu\'elles vendent.' },
+              { icon: MessageCircle, title: 'Service Personnalisé', desc: 'Besoin d\'un conseil ? Notre équipe est disponible sur WhatsApp pour vous guider.' },
             ].map((item) => (
-              <div key={item.title} className="text-center text-white">
-                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
-                  <item.icon className="w-7 h-7 text-gold" />
+              <div key={item.title} className="flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-all">
+                <div className="w-12 h-12 shrink-0 rounded-full bg-gold/20 flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-gold" />
                 </div>
-                <h3 className="font-display text-lg mb-1">{item.title}</h3>
-                <p className="text-white/60 text-sm">{item.desc}</p>
+                <div>
+                  <h3 className="font-display text-white text-lg mb-1">{item.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
