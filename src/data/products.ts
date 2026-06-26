@@ -105,7 +105,7 @@ export const products: Product[] = [
     price: 8000,
     description: "Eau micellaire purifiante Bioderma 500ml — démaquille et purifie la peau en profondeur.",
     category: "Soins Visage",
-    image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400",
+    image: "https://img01.ztat.net/article/spp-media-p1/74002af9bd7045cd9bc7b4fd1d29d500/e29368ad9d514aebb61921cc36852485.jpg?imwidth=1800&filter=packshot",
     inStock: true,
   },
   {
